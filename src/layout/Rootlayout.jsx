@@ -1,0 +1,38 @@
+import React, { useEffect } from 'react'
+import { Outlet,useNavigate} from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { app } from '../firebase.config'
+import { getAuth } from 'firebase/auth'
+import { userInfo } from '../Slice/userslice'
+import Nav from '../Home/Nav'
+
+
+const Rootlayout = () => {
+const navigate= useNavigate();
+const auth=getAuth(app);
+let user = useSelector((state) => state.userInfo?.value);
+
+useEffect(()=>{
+   if(!userInfo){
+  navigate('/signin');
+   } else if(!auth.currentUser){
+     navigate('/signin');
+   }
+   else{
+    console.log(auth.currentUser)
+   }
+   
+  },[auth.currentUser]);
+
+
+  return (
+    <>
+   
+
+   <Outlet/>
+  <Nav userInfo={user}/>
+    </>
+  )
+}
+
+export default Rootlayout
