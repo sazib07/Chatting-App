@@ -30,7 +30,7 @@ let user = useSelector((state)=>state.userInfo.value);
       <FriendRequestlist/>
       </div>
       {/* <h1>{user.displayName}</h1> */}
-        {/* <Nav userInfo={user}/> */}
+        <Nav userInfo={user}/>
     </main>
 
   )
