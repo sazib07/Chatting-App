@@ -2,7 +2,6 @@ import React from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import { removeUser, userInfo
 } from '../Slice/userslice';
-import Nav from '../Home/Nav';
 import Userlist from '../Home/Userlist';
 import FriendRequestlist from '../Home/Friendrequestlist';
 
@@ -30,7 +29,8 @@ let user = useSelector((state)=>state.userInfo.value);
       <FriendRequestlist/>
       </div>
       {/* <h1>{user.displayName}</h1> */}
-        <Nav userInfo={user}/>
+      {/* <Nav userInfo={user}/> */}
+
     </main>
 
   )
