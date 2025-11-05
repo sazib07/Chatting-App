@@ -48,7 +48,7 @@ const handleSendMessage = async (e) => {
   setMessages([...messages, newMessage]);
   setInput("");
 
- 
+  
   try {
     const messagesRef = ref(db, "messages");
     const newMessageRef = push(messagesRef);
@@ -73,6 +73,10 @@ const handleSendMessage = async (e) => {
 setFriendList(array);
   });
     },[]);
+
+  let handleBlock=()=>{
+      alert("asdkgfaf")
+    }
   return (
     <div className="flex h-[90vh] bg-gray-100 rounded-xl shadow-lg overflow-hidden">
       {/* Sidebar */}
@@ -80,7 +84,6 @@ setFriendList(array);
         <h2 className="text-2xl font-bold mb-4 text-gray-700">Friends</h2>
         <ul className="space-y-2 overflow-y-auto flex-1 ">
           {friendList.map((item) => (
-
            <li
   key={item.id}
   onClick={() => handleSelectFriend(item)}
@@ -112,12 +115,11 @@ setFriendList(array);
   </div>
 
   {/* Right: Block button */}
-  <button className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm transition">
+  <button onClick={handleBlock} 
+  className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm transition">
     Block
   </button>
 </li>
-
-
           ))}
         </ul>
       </div>
