@@ -81,44 +81,43 @@ setFriendList(array);
         <ul className="space-y-2 overflow-y-auto flex-1 ">
           {friendList.map((item) => (
 
-            <li
-              key={item.id}
-              onClick={() => handleSelectFriend(item)}
-              className={`flex items-center p-3 rounded-lg cursor-pointer transition 
-                ${
-                  selecteduser.id == item.senderid || selecteduser.id == item.reciverid
-                    ? "bg-blue-300 text-black"
-                    : " bg-gray-500"
-                }`}
-            >
-              <div className="relative w-10 h-10 ">
-                <img
-                  src={`https://api.dicebear.com/9.x/initials/svg?seed=${item.sendername}`}
-                  alt={item.name}
-                  className="w-10 h-10 rounded-full"
-                />
-                <span
-                  className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${
-                   item.status === "online"
-                      ? "bg-green-500"
-                      : "bg-gray-400"
-                    }`}
-                ></span>
-                  
-           
-              </div>
-              {user.uid == item.senderid ?
-              <p className="ml-3 font-medium">{item.recivername}</p>
-              :
-              <p className="ml-3 font-medium">{item.sendername}</p>
-            }
-            {/* <div>
-            <p className="ml-3 font-medium">{item.senderemail}</p>
-            
-            </div> */}
-          
-            <button className="bg-blue-500 text-white px-2 py-1">Block</button>
-            </li>
+           <li
+  key={item.id}
+  onClick={() => handleSelectFriend(item)}
+  className={`flex items-center justify-between p-3 rounded-lg cursor-pointer transition 
+    ${
+      selecteduser.id == item.senderid || selecteduser.id == item.reciverid
+        ? "bg-blue-300 text-black"
+        : "bg-gray-500"
+    }`}
+>
+  {/* Left: Avatar + Name */}
+  <div className="flex items-center space-x-3">
+    <div className="relative w-10 h-10">
+      <img
+        src={`https://api.dicebear.com/9.x/initials/svg?seed=${item.sendername}`}
+        alt={item.name}
+        className="w-10 h-10 rounded-full"
+      />
+      <span
+        className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${
+          item.status === "online" ? "bg-green-500" : "bg-gray-400"
+        }`}
+      ></span>
+    </div>
+
+    <p className="font-medium">
+      {user.uid == item.senderid ? item.recivername : item.sendername}
+    </p>
+  </div>
+
+  {/* Right: Block button */}
+  <button className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm transition">
+    Block
+  </button>
+</li>
+
+
           ))}
         </ul>
       </div>
