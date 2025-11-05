@@ -74,9 +74,23 @@ setFriendList(array);
   });
     },[]);
 
-  let handleBlock=()=>{
-      alert("asdkgfaf")
+  let handleBlock=(item)=>{
+    if(user.uid == item.senderid){
+      set(push(ref(db, "blockList/" )), {
+        blockbyid : user.uid,
+         blockby : user.displayName,
+         blockeduser: item.recivername,
+         blockedid: item.reciverid,           })
+          
+    }else{
+ set(push(ref(db, "blockList/" )), {
+        blockbyid : user.uid,
+         blockby : user.displayName,
+         blockeduser: item.sendername,
+         blockedid: item.senderid,          
+         });
     }
+    };
   return (
     <div className="flex h-[90vh] bg-gray-100 rounded-xl shadow-lg overflow-hidden">
       {/* Sidebar */}
@@ -115,7 +129,7 @@ setFriendList(array);
   </div>
 
   {/* Right: Block button */}
-  <button onClick={handleBlock} 
+  <button onClick={()=>handleBlock(item)} 
   className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md text-sm transition">
     Block
   </button>
