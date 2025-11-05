@@ -1,4 +1,4 @@
-import { getDatabase, onValue, push, ref, set } from "firebase/database";
+import { getDatabase, onValue, push, ref, remove, set } from "firebase/database";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -80,17 +80,23 @@ setFriendList(array);
         blockbyid : user.uid,
          blockby : user.displayName,
          blockeduser: item.recivername,
-         blockedid: item.reciverid,           })
-          
+         blockedid: item.reciverid,           
+        }).then(()=>{
+             remove(ref(db, "friendList/" + item.uid ))
+           });
     }else{
  set(push(ref(db, "blockList/" )), {
         blockbyid : user.uid,
          blockby : user.displayName,
          blockeduser: item.sendername,
-         blockedid: item.senderid,          
-         });
+         blockedid: item.senderid, 
+         }).then(()=>{
+             remove(ref(db, "friendList/" + item.uid))
+           });
     }
     };
+
+    //25.19
   return (
     <div className="flex h-[90vh] bg-gray-100 rounded-xl shadow-lg overflow-hidden">
       {/* Sidebar */}
