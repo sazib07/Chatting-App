@@ -153,7 +153,7 @@ setFriendList(array);
 
             {/* Messages */}
             <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
-              {messages.map((msg, index) => (
+              {messages.map((msg,index) => (
                 <div
                   key={index}
                   className={`flex ${
