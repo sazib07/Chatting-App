@@ -110,10 +110,11 @@ setFriendList(array);
               :
               <p className="ml-3 font-medium">{item.sendername}</p>
             }
-            <div>
+            {/* <div>
             <p className="ml-3 font-medium">{item.senderemail}</p>
-
-            </div>
+            
+            </div> */}
+            <button className="bg-blue-500 text-white px-2 py-1 ">Block</button>
             </li>
           ))}
         </ul>
