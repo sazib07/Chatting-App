@@ -13,11 +13,11 @@ let [friendList,setFriendList]=useState([])
 let user = useSelector((state) => state.userInfo?.value);
 const dispatch = useDispatch()
 
-  const friends = [
-    { id: 1, name: "Zack", status: "online" },
-    { id: 2, name: "Nishat", status: "offline" },
-    { id: 3, name: "Sifat", status: "online" },
-  ];
+  // const friends = [
+  //   { id: 1, name: "Zack", status: "online" },
+  //   { id: 2, name: "Nishat", status: "offline" },
+  //   { id: 3, name: "Sifat", status: "online" },
+  // ];
   const handleSelectFriend = (item) => {
     setSelectedFriend(item);
     setMessages([
@@ -110,7 +110,10 @@ setFriendList(array);
               :
               <p className="ml-3 font-medium">{item.sendername}</p>
             }
-            {/* <p className="ml-3 font-medium">{item.senderemail}</p> */}
+            <div>
+            <p className="ml-3 font-medium">{item.senderemail}</p>
+
+            </div>
             </li>
           ))}
         </ul>
