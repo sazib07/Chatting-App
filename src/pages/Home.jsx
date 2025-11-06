@@ -4,6 +4,7 @@ import { removeUser, userInfo
 } from '../Slice/userslice';
 import Userlist from '../Home/Userlist';
 import FriendRequestlist from '../Home/Friendrequestlist';
+import Blocklist from './Blocklist';
 
 
 
@@ -27,6 +28,7 @@ let user = useSelector((state)=>state.userInfo.value);
 
       <Userlist/>
       <FriendRequestlist/>
+      <Blocklist/>
       </div>
       {/* <h1>{user.displayName}</h1> */}
       {/* <Nav userInfo={user}/> */}
