@@ -96,7 +96,7 @@ setFriendList(array);
     }
     };
 
-    //25.19
+   
   return (
     <div className="flex h-[90vh] bg-gray-100 rounded-xl shadow-lg overflow-hidden">
       {/* Sidebar */}

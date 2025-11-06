@@ -66,28 +66,8 @@ let db=getDatabase()
 setBlockList(array);
   });
 },[]);
-  let handleUnBlock=(user)=>{
-     
-    if(user.uid == item.senderid){
-      set(push(ref(db, "users/" )), {
-        blockbyid : user.uid,
-         blockby : user.displayName,
-         blockeduser: item.recivername,
-         blockedid: item.reciverid,           
-        }).then(()=>{
-             remove(ref(db, "blockList/" + item.uid ))
-           });
-    }else{
- set(push(ref(db, "users/" )), {
-        blockbyid : user.uid,
-         blockby : user.displayName,
-         blockeduser: item.sendername,
-         blockedid: item.senderid, 
-         }).then(()=>{
-             remove(ref(db, "blockList/" + item.uid))
-           });
-          
-    }
+  let handleUnBlock=(item)=>{
+    remove(ref(db,"blockList/" + item.uid));
     };
   return (
   <div className="w-sm overflow-y-auto mt-10 h-[380px] bg-white shadow-lg rounded-xl overflow-hidden">
@@ -111,7 +91,7 @@ setBlockList(array);
             </div>
             <div className="ml-4">
               <p className="font-medium">{user.blockeduser}</p>
-              <p className="text-sm text-gray-500">{user.senderemail}</p>
+              {/* <p className="text-sm text-gray-500">{user.senderemail}</p> */}
             </div>
             {/* <FaUserPlus /> */}
             <button onClick={()=>handleUnBlock(user)}
