@@ -66,7 +66,8 @@ let db=getDatabase()
 setBlockList(array);
   });
 },[]);
-  let handleUnblock=(item)=>{
+  let handleUnBlock=(user)=>{
+     
     if(user.uid == item.senderid){
       set(push(ref(db, "users/" )), {
         blockbyid : user.uid,
@@ -85,7 +86,7 @@ setBlockList(array);
          }).then(()=>{
              remove(ref(db, "blockList/" + item.uid))
            });
-           alert("hdfusi")
+          
     }
     };
   return (
@@ -109,11 +110,11 @@ setBlockList(array);
               ></span>
             </div>
             <div className="ml-4">
-              <p className="font-medium">{user.sendername}</p>
+              <p className="font-medium">{user.blockeduser}</p>
               <p className="text-sm text-gray-500">{user.senderemail}</p>
             </div>
             {/* <FaUserPlus /> */}
-            <button onClick={()=>handleUnblock(user)}
+            <button onClick={()=>handleUnBlock(user)}
              className="bg-blue-500  ml-12 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
   Unblock
 </button>
