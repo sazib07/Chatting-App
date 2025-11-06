@@ -47,39 +47,28 @@ const statusColors = {
 
 const Blocklist = () => {
   let user = useSelector((state)=>state.userInfo.value);
-  const [friendRequestList,setfriendRequestList]=useState([])
+  const [blockList,setBlockList]=useState([])
 
 
 let db=getDatabase()
    useEffect(()=>{
-  const friendrequestRef = ref(db, 'friendrequest/' );
-  onValue(friendrequestRef, (snapshot) => {
+  const blocklistRef = ref(db, 'blockList/' );
+  onValue(blocklistRef, (snapshot) => {
     let array=[]
    snapshot.forEach((item)=>{
-     if(user.uid == item.val().reciverid){
-
        array.push({...item.val(),uid:item.key})
 
-     }
     });
-setfriendRequestList(array);
+    console.log(array)
+setBlockList(array);
   });
-    },[]);
+},[]);
 
-
-    let handleAccept=(item)=>{
-    
-     set(push(ref(db, "friendList/" )), {
-    ...item
-       }).then(()=>{
-         remove(ref(db, "friendrequest/" + item.uid ))
-       })
-    }
   return (
   <div className="w-sm overflow-y-auto mt-10 h-[380px] bg-white shadow-lg rounded-xl overflow-hidden">
       <h2 className="text-xl font-bold p-4 border-b">BlockList</h2>
       <ul>
-        {friendRequestList.map((user) => (
+        {blockList.map((user) => (
           <li
           key={user.id}
           className="flex items-center p-4 hover:bg-gray-100 transition-colors cursor-pointer"
@@ -100,9 +89,9 @@ setfriendRequestList(array);
               <p className="text-sm text-gray-500">{user.senderemail}</p>
             </div>
             {/* <FaUserPlus /> */}
-            <button onClick={()=>handleAccept(user)}
+            <button onClick={()=>handleUnblock(user)}
              className="bg-blue-500  ml-12 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Accept
+  Unblock
 </button>
           </li>
         ))}
