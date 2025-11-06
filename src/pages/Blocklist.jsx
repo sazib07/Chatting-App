@@ -59,14 +59,35 @@ let db=getDatabase()
     if (user.uid == item.val().blockbyid){
         array.push({...item.val(),uid:item.key})
 
-    }
+    } 
 
     });
     console.log(array)
 setBlockList(array);
   });
 },[]);
-
+  let handleUnblock=(item)=>{
+    if(user.uid == item.senderid){
+      set(push(ref(db, "users/" )), {
+        blockbyid : user.uid,
+         blockby : user.displayName,
+         blockeduser: item.recivername,
+         blockedid: item.reciverid,           
+        }).then(()=>{
+             remove(ref(db, "blockList/" + item.uid ))
+           });
+    }else{
+ set(push(ref(db, "users/" )), {
+        blockbyid : user.uid,
+         blockby : user.displayName,
+         blockeduser: item.sendername,
+         blockedid: item.senderid, 
+         }).then(()=>{
+             remove(ref(db, "blockList/" + item.uid))
+           });
+           alert("hdfusi")
+    }
+    };
   return (
   <div className="w-sm overflow-y-auto mt-10 h-[380px] bg-white shadow-lg rounded-xl overflow-hidden">
       <h2 className="text-xl font-bold p-4 border-b">BlockList</h2>
