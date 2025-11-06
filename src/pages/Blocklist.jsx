@@ -56,7 +56,10 @@ let db=getDatabase()
   onValue(blocklistRef, (snapshot) => {
     let array=[]
    snapshot.forEach((item)=>{
-       array.push({...item.val(),uid:item.key})
+    if (user.uid == item.val().blockbyid){
+        array.push({...item.val(),uid:item.key})
+
+    }
 
     });
     console.log(array)
