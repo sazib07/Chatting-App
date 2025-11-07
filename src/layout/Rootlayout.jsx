@@ -13,9 +13,9 @@ const auth=getAuth(app);
 let user = useSelector((state) => state.userInfo?.value);
 
 useEffect(()=>{
-   if(!userInfo){
+   if(!user){
   navigate('/signin');
-   } else if(!auth.currentUser){
+   } else if(!user.emailVerified){
      navigate('/signin');
    }
    else{
