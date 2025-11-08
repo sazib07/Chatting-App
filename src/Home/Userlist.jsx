@@ -55,6 +55,18 @@ onValue(userRef, (snapshot) => {
     });
       },[]);
 
+//        useEffect(()=>{
+//     const blocklistRef = ref(db, "friendList/");
+//     onValue(blocklistRef, (snapshot) => {
+//       let array=[];
+//      snapshot.forEach((item)=>{
+//          array.push(item.val().senderid + item.val().reciverid)
+//  setblockId(array)
+//       });
+
+//     });
+//       },[]);
+
 
 const handlefRequest=(item)=>{
 set(push(ref(db, "friendrequest/" )), {
@@ -128,7 +140,25 @@ console.log(friendrequestId)
   Add
 </button>
         )}
-          
+               {/* {blockeduser
+
+.includes(user.uid + item.id) ||
+            blockeduser
+.includes(item.id+user.uid) ?
+  <h1 className=" cursor-pointer ml-12 text-black font-bold py-[px] bg-gray-300 px-[8px] rounded items-center justify-between">Friend</h1>
+  :
+
+            blockedid.includes(user.uid + item.uid) ||
+            blockedid.includes(item.uid+user.uid) ? (
+           <h1 className="bg-gray-400 cursor-pointer ml-12 text-black font-bold py-2 px-4 rounded items-center justify-between" >R.</h1>
+               ):(
+            <button 
+            onClick={()=> handlefRequest (item)}
+             className="bg-blue-500 cursor-pointer ml-12 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded items-center justify-between">
+  Add
+</button>
+        )}
+           */}
           </li>
         ))
         }
