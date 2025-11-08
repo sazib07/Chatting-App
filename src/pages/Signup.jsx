@@ -45,7 +45,7 @@ let [loading,setLoading]=useState(false)
     };
     let handleSignup = () => {
         setLoading(true)
-        if (!info.name) {
+        if(!info.name) {
             setErrors((prev) => ({
                 ...prev,
                 name: "Name is required",
@@ -182,9 +182,9 @@ setTimeout(()=>{
                                             text-slate-900 text-sm pl-4 pr-10 py-2.5  focus:border-black outline-none`}
                                         placeholder="Enter name"
                                     />
-                                    {/* {errors.name && 
+                                    {errors.name && 
                                     <p className="text-red-500 ">{errors.name}</p>
-                                    } */}
+                                    }
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="#bbb"
@@ -210,7 +210,7 @@ setTimeout(()=>{
                                         type="email"
                                         required=""
                                         className={`bg-transparent w-full border-b
-                                            ${errors.name ? " border-b-red-500 placeholder:text-red-500" : "border-b border-slate-500"}
+                                            ${errors.email ? " border-b-red-500 placeholder:text-red-500" : "border-b border-slate-500"}
                                             text-slate-900 text-sm pl-4 pr-10 py-2.5  focus:border-black outline-none`}
                                         placeholder="Enter email"
                                     />
@@ -255,7 +255,7 @@ setTimeout(()=>{
                                         type="password"
                                         required=""
                                         className={`bg-transparent w-full border-b
-                                            ${errors.name ? " border-b-red-500 placeholder:text-red-500" : "border-b border-slate-500"}
+                                            ${errors.password ? " border-b-red-500 placeholder:text-red-500" : "border-b border-slate-500"}
                                             text-slate-900 text-sm pl-4 pr-10 py-2.5  focus:border-black outline-none`}
                                         placeholder="Enter password"
                                     />
