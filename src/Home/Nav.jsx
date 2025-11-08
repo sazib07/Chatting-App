@@ -104,22 +104,22 @@ console.log(error)
           className="px-4 py-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600 hover:text-white transition"
         >
           Close
-        </button>
+        </button> */}
         <button
           onClick={handleClick}
           className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-500 transition"
         >
           Logout
-        </button> */}
+        </button>
 
-        {/* <button
+         {/* <button
           onClick={() => setShowModal(false)}
           className="px-4 py-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600 hover:text-white transition"
         >
           Close
         </button> */}
         <button
-          onClick={handleClick}
+       onClick={() => setShowModal(false)}
           className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-500 transition"
         >
           close

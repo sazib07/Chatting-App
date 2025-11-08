@@ -215,7 +215,8 @@ setTimeout(()=>{
                                         placeholder="Enter email"
                                     />
                                      {errors.email && 
-                                    <p className="text-red-500 ">{errors.email}</p>
+                                    <p className="text-red-500 ">{errors.email}
+                                    </p>
                                     }
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
