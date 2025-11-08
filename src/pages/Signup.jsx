@@ -70,24 +70,25 @@ let [loading,setLoading]=useState(false)
             createUserWithEmailAndPassword(auth,info.email,info.password)
             .then((userCredential) => {
       const user = userCredential.user;
-  sendEmailVerification(auth.currentUser)
-  .then(() => {
-updateProfile(auth.currentUser, {
-  displayName:info.name ,photoURL: "https://example.com/jane-q-user/profile.jpg"
+      sendEmailVerification(auth.currentUser)
+    .then(() => {
+    updateProfile(auth.currentUser, {
+    displayName:info.name ,
+    photoURL: "https://pixabay.com/vectors/blank-profile-picture-mystery-man-973460/"
 }).then(() => {
 set(ref(db,"users/" + user.uid), {
   name:info.name,
   email:info.email,
-  });
+});
+setLoading(false)
+toast.success("Email send successfully")
+setTimeout(()=>{
+    navigate("/signin")
+  },2000)
+});
     
     console.log(user)
 
-  setLoading(false)
-  setTimeout(()=>{
-      navigate("/signin")
-    },2000)
-  toast.success("Email send successfully")
-});
 
 });
   
