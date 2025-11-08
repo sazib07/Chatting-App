@@ -85,7 +85,6 @@ set(ref(db,"users/" + user.uid), {
   setLoading(false)
   setTimeout(()=>{
       navigate("/signin")
-      
     },2000)
   toast.success("Email send successfully")
 });
