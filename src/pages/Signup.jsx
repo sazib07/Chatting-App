@@ -214,6 +214,9 @@ setTimeout(()=>{
                                             text-slate-900 text-sm pl-4 pr-10 py-2.5  focus:border-black outline-none`}
                                         placeholder="Enter email"
                                     />
+                                     {errors.email && 
+                                    <p className="text-red-500 ">{errors.email}</p>
+                                    }
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="#bbb"
@@ -259,6 +262,9 @@ setTimeout(()=>{
                                             text-slate-900 text-sm pl-4 pr-10 py-2.5  focus:border-black outline-none`}
                                         placeholder="Enter password"
                                     />
+                                     {errors.password && 
+                                    <p className="text-red-500 ">{errors.password}</p>
+                                    }
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="#bbb"
