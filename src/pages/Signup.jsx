@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 import { auth } from '../firebase.config';
 import toast, { Toaster } from 'react-hot-toast';
  import { getDatabase, ref, set } from "firebase/database";
-import { useNavigate } from 'react-router-dom';
-import { Link} from 'react-router-dom';
+import { useNavigate,Link } from 'react-router';
+
 
 const Signup = () => {
     const navigate=useNavigate()
@@ -214,10 +214,10 @@ setTimeout(()=>{
                                             text-slate-900 text-sm pl-4 pr-10 py-2.5  focus:border-black outline-none`}
                                         placeholder="Enter email"
                                     />
-                                     {errors.email && 
+                                     {/* {errors.email && 
                                     <p className="text-red-500 ">{errors.email}
                                     </p>
-                                    }
+                                    } */}
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="#bbb"
