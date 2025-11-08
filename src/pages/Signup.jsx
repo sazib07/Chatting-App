@@ -5,7 +5,7 @@ import { auth } from '../firebase.config';
 import toast, { Toaster } from 'react-hot-toast';
  import { getDatabase, ref, set } from "firebase/database";
 import { useNavigate } from 'react-router-dom';
-import { Link} from 'react-router';
+import { Link} from 'react-router-dom';
 
 const Signup = () => {
     const navigate=useNavigate()
