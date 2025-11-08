@@ -77,7 +77,7 @@ console.log(error)
           ))}
         </ul>
       </div>
-{/* showLogoutModal && */}
+
       {showModal &&  (
         <div className="fixed inset-0 bg-gray-700 bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-gray-900 rounded-xl p-6 w-80 relative">
@@ -99,30 +99,52 @@ console.log(error)
       </p>
       
       <div className="flex gap-3 mt-3">
-  {/* <button
-          onClick={() => setShowModal(false)}
-          className="px-4 py-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600 hover:text-white transition"
-        >
-          Close
-        </button> */}
-        <button
-          onClick={handleClick}
-          className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-500 transition"
-        >
-          Logout
-        </button>
-
-         {/* <button
-          onClick={() => setShowModal(false)}
-          className="px-4 py-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600 hover:text-white transition"
-        >
-          Close
-        </button> */}
         <button
        onClick={() => setShowModal(false)}
           className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-500 transition"
         >
           close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+      )}
+
+      {showLogoutModal &&  (
+        <div className="fixed inset-0 bg-gray-700 bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-gray-900 rounded-xl p-6 w-80 relative">
+            <h2 className="text-xl font-bold text-white mb-2">Profile Info</h2>
+            
+           <div className="flex flex-col gap-4 mt-7">
+  <div className="flex gap-4">
+    <img
+      src={userInfo.photoURL}
+      alt="user avatar"
+      className="h-12 rounded-[20px]"
+    />
+    <div className="flex flex-col gap-1">
+      <p className="text-gray-300">
+        <span className="font-semibold">{userInfo?.displayName}</span>
+      </p>
+      <p className="text-gray-300">
+        <span className="font-semibold">{userInfo?.email}</span>
+      </p>
+      
+      <div className="flex gap-3 mt-3">
+          <button
+       onClick={() => setshowLogoutModal(false)}
+          className="px-4 py-2 bg-teal-300 text-white rounded hover:bg-gray-500 transition"
+        >
+          Close
+        </button>
+        <button
+       onClick={handleLogout}
+          className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-500 transition"
+        >
+          Logout
         </button>
       </div>
     </div>
