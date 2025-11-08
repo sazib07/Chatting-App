@@ -3,9 +3,9 @@ import { createUserWithEmailAndPassword,sendEmailVerification,updateProfile } fr
 import React, { useState } from 'react'
 import { auth } from '../firebase.config';
 import toast, { Toaster } from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router';
  import { getDatabase, ref, set } from "firebase/database";
-
+import { useNavigate } from 'react-router-dom';
+import { Link} from 'react-router';
 
 const Signup = () => {
     const navigate=useNavigate()
