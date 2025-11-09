@@ -76,12 +76,18 @@ setBlockList(array);
           className="flex items-center p-4 hover:bg-gray-100 transition-colors cursor-pointer"
           >
             {console.log(user)}
+            <div className="flex items-center gap-4">
             <div className="relative">
-              <img
-                className="w-12 h-12 rounded-full"
-                src={user.avatar}
-                alt={user.name}
-              />
+             <img
+  className="w-12 h-12 rounded-full"
+  src={
+    user.photoURL
+      ? user.photoURL
+      : `https://api.dicebear.com/9.x/initials/svg?seed=${user.blockeduser}`
+  }
+  alt={user.blockeduser}
+/>
+
               <span
                 className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${statusColors[user.status]}`}
               ></span>
@@ -91,10 +97,14 @@ setBlockList(array);
               {/* <p className="text-sm text-gray-500">{user.senderemail}</p> */}
             </div>
             {/* <FaUserPlus /> */}
+
             <button onClick={()=>handleUnBlock(user)}
              className="bg-blue-500  ml-12 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
   Unblock
 </button>
+
+
+            </div>
           </li>
         ))}
       </ul>
