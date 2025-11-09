@@ -109,7 +109,6 @@ console.log(friendrequestId)
                   alt={item.name}
                 />
               ):(
-
                <img
                 className="w-12 h-12 rounded-full"
                 src="https://picsum.photos/200/300"
@@ -117,7 +116,7 @@ console.log(friendrequestId)
               />
               )}
               <span
-                className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${statusColors[user.status]}`}
+                className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${statusColors[item.status]}`}
               ></span>
             </div>
             <div className="ml-4">
