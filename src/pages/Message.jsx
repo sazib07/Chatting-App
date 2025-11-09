@@ -96,7 +96,12 @@ setFriendList(array);
     }
     };
 
-   
+     const getAvatar = (photoURL, name) => {
+    return photoURL
+      ? item.photoURL
+      : `https://api.dicebear.com/9.x/initials/svg?seed=${name}`;
+  };
+
   return (
     <div className="flex h-[90vh] bg-gray-100 rounded-xl shadow-lg overflow-hidden">
       {/* Sidebar */}
@@ -117,11 +122,18 @@ setFriendList(array);
   {/* Left: Avatar + Name */}
   <div className="flex items-center space-x-3">
     <div className="relative w-10 h-10">
-      <img
-        src={`https://api.dicebear.com/9.x/initials/svg?seed=${item.sendername}`}
-        alt={item.name}
-        className="w-10 h-10 rounded-full"
-      />
+        <img
+                    src={getAvatar(
+                      user.uid === item.senderid
+                        ? item.reciverPhotoURL
+                        : item.senderPhotoURL,
+                      user.uid === item.senderid
+                        ? item.recivername
+                        : item.sendername
+                    )}
+                    alt={item.sendername}
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
       <span
         className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${
           item.status === "online" ? "bg-green-500" : "bg-gray-400"
