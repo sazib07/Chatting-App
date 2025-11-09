@@ -76,7 +76,7 @@ setfriendRequestList(array);
        })
     }
   return (
-  <div className="w-sm overflow-y-auto mt-10 h-[380px] bg-white shadow-lg rounded-xl overflow-hidden">
+  <div className="w-sm overflow-y-auto mt-10 h-[380px] bg-[#ADD8E6] shadow-lg rounded-xl overflow-hidden">
       <h2 className="text-xl font-bold p-4 border-b">FriendRequest List</h2>
       <ul>
         {friendRequestList.map((user) => (
