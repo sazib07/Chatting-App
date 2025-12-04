@@ -80,7 +80,7 @@ set(push(ref(db, "friendrequest/" )), {
 }
 console.log(friendrequestId)
   return (
-    <div className="w-sm overflow-y-auto mt-10 h-[380px] bg-[#ADD8E6] shadow-lg rounded-xl overflow-hidden">
+    <div className="w-sm overflow-y-auto mt-10 h-[380px] bg-[#BFDBFE] shadow-lg rounded-xl overflow-hidden">
       <h2 className="text-xl font-bold p-4 border-b">User List</h2>
       <ul>
 
