@@ -27,11 +27,11 @@ useEffect(()=>{
 
   return (
     <>
-   <div className="bg-slate-800">
+ 
 
    <Outlet/>
   <Nav userInfo={user}/>
-   </div>
+   
 
     </>
   )
