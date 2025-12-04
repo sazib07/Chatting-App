@@ -67,7 +67,7 @@ setBlockList(array);
     remove(ref(db,"blockList/" + item.uid));
     };
   return (
-  <div className="w-sm overflow-y-auto mt-10 h-[380px] bg-[#FDE68A] shadow-lg rounded-xl overflow-hidden">
+  <div className="w-sm overflow-y-auto mt-10 h-[380px] bg-red-100 shadow-lg rounded-xl overflow-hidden">
       <h2 className="text-xl font-bold p-4 border-b">BlockList</h2>
       <ul>
         {blockList.map((user) => (
