@@ -103,7 +103,7 @@ setFriendList(array);
   };
   
   return (
-    <div className="flex h-[90vh] bg-gray-100 rounded-xl shadow-lg overflow-hidden">
+    <div className="flex h-[90vh] bg-blue-100 shadow-lg overflow-hidden">
       {/* Sidebar */}
       <div className="w-1/4 bg-white border-r  border-gray-200 p-4 flex flex-col">
         <h2 className="text-2xl font-bold mb-4 text-gray-700">Friends</h2>
