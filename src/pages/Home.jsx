@@ -24,7 +24,7 @@ let user = useSelector((state)=>state.userInfo.value);
     
 
     <main>
-      <div className="flex gap-5 mt-[15px]  justify-center">
+      <div className="flex gap-5 mt-[15px] bg-slate-800  justify-center">
       <Userlist/>
       <FriendRequestlist/>
       <Blocklist/>
