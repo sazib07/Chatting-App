@@ -27,7 +27,7 @@ useEffect(()=>{
 
   return (
     <>
-<body class="bg-slate-500 text-white">
+<body class="bg-[#0F172A] text-white">
   <div id="root"></div>
 </body>
    <Outlet/>
