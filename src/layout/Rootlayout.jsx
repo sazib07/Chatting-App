@@ -27,8 +27,9 @@ useEffect(()=>{
 
   return (
     <>
- 
-
+<body class="bg-slate-500 text-white">
+  <div id="root"></div>
+</body>
    <Outlet/>
   <Nav userInfo={user}/>
    
