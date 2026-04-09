@@ -3,11 +3,11 @@ import { configureStore } from '@reduxjs/toolkit'
 
 // Import slices (ensure filenames match exactly!)
 import userSlice from './Slice/userSlice'      // file: src/Slice/userSlice.js
-import { MessageSlice } from './Slice/Messageslice' // file: src/Slice/messageSlice.js
+import MessageSlice from "./Slice/MessageSlice" // file: src/Slice/messageSlice.js
 
 export const store = configureStore({
   reducer: {
     userInfo: userSlice,
-    selectedUser: MessageSlice,
+    message: MessageSlice,
   },
 })

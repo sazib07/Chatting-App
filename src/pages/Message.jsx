@@ -2,7 +2,7 @@ import { getDatabase, onValue, push, ref, remove, set } from "firebase/database"
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { selecteduser } from "../Slice/Messageslice";
+import { selecteduser } from "../Slice/MessageSlice";
 
 const Message = () => {
   const [selectedFriend, setSelectedFriend] = useState(null);
