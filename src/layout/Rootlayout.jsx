@@ -8,7 +8,7 @@ import Nav from '../Home/Nav'
 
 const Rootlayout = () => {
 const navigate= useNavigate();
-const auth=getAuth(app);
+const auth = getAuth(app);
 let user = useSelector((state) => state.userInfo?.value);
 
 useEffect(()=>{
@@ -21,16 +21,15 @@ useEffect(()=>{
     console.log(auth.currentUser)
    }
    
-  },[auth.currentUser]);
+  },[user]);
 
 
   return (
     <>
 <div className="bg-[#0F172A] text-white">
-  <div id="root"></div>
-</div>
    <Outlet/>
   <Nav userInfo={user}/>
+</div>
    
 
     </>

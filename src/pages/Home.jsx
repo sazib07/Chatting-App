@@ -25,12 +25,9 @@ const Home = () => {
         <Blocklist />
       </div>
 
-      <h1>{user?.displayName}</h1>
+      {/* <h1>{user?.displayName}</h1> */}
 
-      <div className="mt-4 flex gap-3">
-        <button onClick={handleSend}>Send</button>
-        <button onClick={handleRemove}>Remove</button>
-      </div>
+      
     </main>
   )
 }

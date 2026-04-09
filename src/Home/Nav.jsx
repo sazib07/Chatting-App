@@ -45,7 +45,6 @@ const Nav = ({userInfo}) => {
 
   
   const handleLogout= ()=>{
- 
 signOut(auth)
 .then(() => {
   localStorage.removeItem("user")
