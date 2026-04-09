@@ -2,8 +2,8 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeUser, userInfo } from '../Slice/userSlice'
 import Userlist from '../Home/Userlist'
-import FriendRequestlist from '../Home/Friendrequestlist'
 import Blocklist from './Blocklist'
+import FriendRequestlist from './../Home/FriendRequestlist';
 
 const Home = () => {
   const dispatch = useDispatch()
