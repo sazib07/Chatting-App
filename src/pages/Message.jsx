@@ -31,7 +31,7 @@ const dispatch = useDispatch()
       }
    
   };
-const handleSendMessage = async (e) => {
+const handleSendMessage = async () => {
   if (input.trim() === "") return;
 
   const now = new Date();

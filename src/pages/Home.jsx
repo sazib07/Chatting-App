@@ -1,39 +1,37 @@
 import React from 'react'
-import { useDispatch,useSelector } from 'react-redux'
-import { removeUser, userInfo
-} from '../Slice/userslice';
-import Userlist from '../Home/Userlist';
-import FriendRequestlist from '../Home/Friendrequestlist';
-import Blocklist from './Blocklist';
-
-
+import { useDispatch, useSelector } from 'react-redux'
+import { removeUser, userInfo } from '../Slice/userSlice'
+import Userlist from '../Home/Userlist'
+import FriendRequestlist from '../Home/Friendrequestlist'
+import Blocklist from './Blocklist'
 
 const Home = () => {
-let dispatch = useDispatch();
-let user = useSelector((state)=>state.userInfo.value);
+  const dispatch = useDispatch()
+  const user = useSelector((state) => state.userInfo.value)
 
-  let handleSend=()=>{
-  dispatch(userInfo({name:""}));
-  }
-   let handleRemove=()=>{
-  dispatch(removeUser(null));
+  const handleSend = () => {
+    dispatch(userInfo({ name: "" }))
   }
 
+  const handleRemove = () => {
+    dispatch(removeUser(null))
+  }
 
   return (
-    
-
-    <main>
-      <div className="flex gap-5 mt-[15px] justify-center">
-      <Userlist/>
-      <FriendRequestlist/>
-      <Blocklist/>
+    <main className="p-4">
+      <div className="flex gap-5 mt-4 justify-center">
+        <Userlist />
+        <FriendRequestlist />
+        <Blocklist />
       </div>
-      {/* <h1>{user.displayName}</h1> */}
-      {/* <Nav userInfo={user}/> */}
 
+      <h1>{user?.displayName}</h1>
+
+      <div className="mt-4 flex gap-3">
+        <button onClick={handleSend}>Send</button>
+        <button onClick={handleRemove}>Remove</button>
+      </div>
     </main>
-
   )
 }
 

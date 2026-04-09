@@ -1,43 +1,46 @@
-import { getDatabase, onValue, push, ref, remove, set } from 'firebase/database';
+import { getDatabase, onValue, ref, remove} from 'firebase/database';
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
-const users = [
-  {
-    id: 1,
-    name: "Alice Johnson",
-    email: "alice@example.com",
-    avatar: "https://i.pravatar.cc/150?img=1",
-    status: "online",
-  },
-  {
-    id: 2,
-    name: "Bob Smith",
-    email: "bob@example.com",
-    avatar: "https://i.pravatar.cc/150?img=2",
-    status: "offline",
-  },
-  {
-    id: 3,
-    name: "Charlie Davis",
-    email: "charlie@example.com",
-    avatar: "https://i.pravatar.cc/150?img=3",
-    status: "busy",
-  },
-   {
-    id: 4,
-    name: "Charlie Davis",
-    email: "charlie@example.com",
-    avatar: "https://i.pravatar.cc/150?img=3",
-    status: "busy",
-  },
-  {
-    id: 4,
-    name: "Charlie Davis",
-    email: "charlie@example.com",
-    avatar: "https://i.pravatar.cc/150?img=3",
-    status: "busy",
-  },
-];
+
+
+// const users = [
+//   {
+//     id: 1,
+//     name: "Alice Johnson",
+//     email: "alice@example.com",
+//     avatar: "https://i.pravatar.cc/150?img=1",
+//     status: "online",
+//   },
+//   {
+//     id: 2,
+//     name: "Bob Smith",
+//     email: "bob@example.com",
+//     avatar: "https://i.pravatar.cc/150?img=2",
+//     status: "offline",
+//   },
+//   {
+//     id: 3,
+//     name: "Charlie Davis",
+//     email: "charlie@example.com",
+//     avatar: "https://i.pravatar.cc/150?img=3",
+//     status: "busy",
+//   },
+//    {
+//     id: 4,
+//     name: "Charlie Davis",
+//     email: "charlie@example.com",
+//     avatar: "https://i.pravatar.cc/150?img=3",
+//     status: "busy",
+//   },
+//   {
+//     id: 4,
+//     name: "Charlie Davis",
+//     email: "charlie@example.com",
+//     avatar: "https://i.pravatar.cc/150?img=3",
+//     status: "busy",
+//   },
+// ];
+
 const statusColors = {
   online: "bg-green-500",
   offline: "bg-gray-400",
@@ -55,14 +58,14 @@ let db=getDatabase()
    snapshot.forEach((item)=>{
     if (user.uid == item.val().blockbyid){
         array.push({...item.val(),uid:item.key})
-
     } 
 
     });
     console.log(array)
 setBlockList(array);
   });
-},[]);
+  
+},[user]);
   let handleUnBlock=(item)=>{
     remove(ref(db,"blockList/" + item.uid));
     };
@@ -72,7 +75,7 @@ setBlockList(array);
       <ul>
         {blockList.map((user) => (
           <li
-          key={user.id}
+          key={user.uid}
           className="flex items-center p-4 hover:bg-gray-100 transition-colors cursor-pointer"
           >
             {console.log(user)}
@@ -116,4 +119,3 @@ export default Blocklist
 
 
 
-//44m

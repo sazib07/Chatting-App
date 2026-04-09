@@ -3,7 +3,7 @@ import {signInWithEmailAndPassword,GoogleAuthProvider, signInWithPopup} from "fi
 import toast from 'react-hot-toast';
 import { auth } from '../firebase.config';
 import { useDispatch } from 'react-redux';
-import { userInfo } from '../Slice/userslice';
+import { userInfo } from '../Slice/userSlice';
 import { Link, useNavigate } from "react-router-dom";
  import { getDatabase, ref, set } from "firebase/database";
 

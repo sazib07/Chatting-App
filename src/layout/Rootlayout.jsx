@@ -3,7 +3,6 @@ import { Outlet,useNavigate} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { app } from '../firebase.config'
 import { getAuth } from 'firebase/auth'
-import { userInfo } from '../Slice/userslice'
 import Nav from '../Home/Nav'
 
 
@@ -22,14 +21,14 @@ useEffect(()=>{
     console.log(auth.currentUser)
    }
    
-  },[auth.currentUser]);
+  },[user]);
 
 
   return (
     <>
-<body class="bg-[#0F172A] text-white">
+<div className="bg-[#0F172A] text-white">
   <div id="root"></div>
-</body>
+</div>
    <Outlet/>
   <Nav userInfo={user}/>
    

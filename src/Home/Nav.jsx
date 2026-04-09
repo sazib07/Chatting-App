@@ -6,7 +6,7 @@ import { BiLogOut } from "react-icons/bi";
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
-import { removeUser } from "../Slice/userslice";
+import { removeUser } from "../Slice/userSlice";
 
 
 
