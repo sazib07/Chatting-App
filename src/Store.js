@@ -6,9 +6,10 @@ import { configureStore } from '@reduxjs/toolkit'
 import userSlice from './Slice/userSlice'      // file: src/Slice/userSlice.js
 import messageSlice from "./Slice/messageSlice" // file: src/Slice/messageSlice.js
 
+
 export const store = configureStore({
   reducer: {
     userInfo: userSlice,
-    message: messageSlice,
+    Message: messageSlice,
   },
 })
