@@ -29,7 +29,7 @@ onValue(userRef, (snapshot) => {
  setUserList(array)
  setloading(false)
 });
-  },[]);
+  },[db,user]);
 
    useEffect(()=>{
     const friendrequestRef = ref(db, 'friendrequest/' );
@@ -40,7 +40,7 @@ onValue(userRef, (snapshot) => {
  setfriendrequestId(array)
       });
     });
-      },[]);
+      },[db,user]);
 
       
    useEffect(()=>{
@@ -53,7 +53,7 @@ onValue(userRef, (snapshot) => {
       });
 
     });
-      },[]);
+      },[db,user]);
 
 //        useEffect(()=>{
 //     const blocklistRef = ref(db, "friendList/");

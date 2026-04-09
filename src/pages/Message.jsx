@@ -72,7 +72,7 @@ const handleSendMessage = async () => {
     );
 setFriendList(array);
   });
-    },[]);
+    },[db,user]);
 
   let handleBlock=(item)=>{
     if(user.uid == item.senderid){
@@ -123,7 +123,7 @@ setFriendList(array);
   <div className="flex items-center space-x-3">
     <div className="relative w-10 h-10">
       <img
-        src={`https://api.dicebear.com/9.x/initials/svg?seed=${item.sendername}`}
+        src={getAvatar(item.photoURL, item.sendername)}
         alt={item.name}
         className="w-10 h-10 rounded-full"
       />

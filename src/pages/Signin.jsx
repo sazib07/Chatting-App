@@ -39,7 +39,7 @@ const navigate=useNavigate()
     toast.success("Login Successfull");
   })
   .catch((error) => {
-    const errorCode = error.code;
+    // const errorCode = error.code;
     const errorMessage = error.message;
     toast.error(errorMessage);
   });
@@ -70,7 +70,7 @@ signInWithPopup(auth, provider)
 
   }).catch((error) => {
 
-    const errorCode = error.code;
+    // const errorCode = error.code;
     const errorMessage = error.message;
    console.log(errorMessage)
   });

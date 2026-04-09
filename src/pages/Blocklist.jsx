@@ -65,7 +65,7 @@ let db=getDatabase()
 setBlockList(array);
   });
   
-},[user]);
+},[db,user]);
   let handleUnBlock=(item)=>{
     remove(ref(db,"blockList/" + item.uid));
     };

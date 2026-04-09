@@ -21,7 +21,7 @@ useEffect(()=>{
     console.log(auth.currentUser)
    }
    
-  },[user]);
+  },[auth.currentUser]);
 
 
   return (

@@ -10,7 +10,7 @@ import { useNavigate,Link } from 'react-router';
 const Signup = () => {
     const navigate=useNavigate()
      const db = getDatabase();
-let [loading,setLoading]=useState(false)
+const [setLoading] = useState(false);
     let [info, setInfo] = useState({
         name: "",
         email: "",
@@ -61,7 +61,7 @@ let [loading,setLoading]=useState(false)
                 password: "password is required",
             }));
         }
-        if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(info.email)){
+        if(!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(info.email)){
             setErrors((prev) => ({
                 ...prev,
                 email: "Invalid email"
@@ -95,7 +95,8 @@ setTimeout(()=>{
   })
   .catch((error) => {
      setLoading(false);
-    const errorCode = error.code;
+    //  const [errorCode, setErrorCode] = useState("");
+    // const errorCode = error.code;
     const errorMessage = error.message;
 
       setErrors((prev) => ({
